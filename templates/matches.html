@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="matches">
+    <h2>Your Job Matches</h2>
+    <p>Based on your skills, we found these matching jobs:</p>
+    
+    <div class="job-list">
+        {% for job, score in matches %}
+        <div class="job-card">
+            <h4>{{ job.title }}</h4>
+            <p class="match-score">Match Score: {{ score }} skills matched</p>
+            <p><strong>Location:</strong> {{ job.location }}</p>
+            <p><strong>Salary:</strong> {{ job.salary }}</p>
+            <p><strong>Required Skills:</strong> {{ job.required_skills }}</p>
+            <a href="{{ url_for('apply_job', job_id=job.id) }}" class="btn">Apply Now</a>
+        </div>
+        {% else %}
+        <p>No matching jobs found. Try updating your skills!</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

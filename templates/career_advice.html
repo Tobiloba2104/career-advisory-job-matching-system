@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="matches">
+    <h2>Career Advice</h2>
+
+    {% if user_skills %}
+    <p><strong>Your current skills:</strong> {{ user_skills }}</p>
+    {% else %}
+    <p>You haven't added any skills yet. <a href="{{ url_for('update_skills') }}">Add your skills</a> to get personalized advice.</p>
+    {% endif %}
+
+    {% if missing_skills %}
+    <p>Based on the jobs currently posted on this platform, here are in-demand skills you might consider learning to improve your job matches:</p>
+    <div class="job-list">
+        {% for skill, count in missing_skills %}
+        <div class="job-card">
+            <h4>{{ skill|capitalize }}</h4>
+            <p>Requested in {{ count }} job posting{{ 's' if count > 1 else '' }} on this platform.</p>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>Great news — your skills already cover the most in-demand requirements on this platform!</p>
+    {% endif %}
+</div>
+{% endblock %}

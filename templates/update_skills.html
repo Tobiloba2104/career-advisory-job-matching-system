@@ -1,0 +1,27 @@
+ {% extends "base.html" %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Update Your Skills</h2>
+    <p>To find better job matches, please update your skills below.</p>
+
+    <form method="POST">
+        <div class="form-group">
+            <label for="skills">Your Skills (comma separated):</label>
+            <input type="text" id="skills" name="skills" placeholder="e.g., Python, HTML, CSS" value="{{ user.skills or '' }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="education">Education:</label>
+            <input type="text" id="education" name="education" placeholder="e.g., BSc Computer Science" value="{{ user.education or '' }}">
+        </div>
+
+        <div class="form-group">
+            <label for="experience">Experience:</label>
+            <textarea id="experience" name="experience" rows="4" placeholder="Briefly describe your experience">{{ user.experience or '' }}</textarea>
+        </div>
+
+        <button type="submit" class="btn">Update Skills</button>
+    </form>
+</div>
+{% endblock %}

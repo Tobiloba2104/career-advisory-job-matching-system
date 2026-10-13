@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="hero-text">
+        <h2 class="fade-in">
+            Find Your Dream Career Path
+        </h2>
+
+        <p class="fade-in-delay">
+            A smart platform that helps students and job seekers
+            discover opportunities, match skills with jobs,
+            and reduce unemployment.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="{{ url_for('register') }}" class="btn">
+                Get Started
+            </a>
+
+            <a href="{{ url_for('login') }}" class="btn btn-secondary">
+                Login
+            </a>
+        </div>
+    </div>
+
+</section>
+
+<section class="features">
+
+    <div class="feature-box">
+        <div class="icon">🎓</div>
+
+        <h3>For Students</h3>
+
+        <p>
+            Create your profile, upload your skills,
+            and discover career opportunities that match your abilities.
+        </p>
+    </div>
+
+    <div class="feature-box">
+        <div class="icon">💼</div>
+
+        <h3>For Employers</h3>
+
+        <p>
+            Post jobs and connect with qualified candidates
+            based on skills and career interests.
+        </p>
+    </div>
+
+    <div class="feature-box">
+        <div class="icon">🚀</div>
+
+        <h3>Career Growth</h3>
+
+        <p>
+            Get guidance and recommendations to improve
+            your employability and professional development.
+        </p>
+    </div>
+
+</section>
+
+<section class="about-section">
+
+    <h2>Why This System Matters</h2>
+
+    <p>
+        Youth unemployment remains a major challenge.
+        This Career Advisory and Job Matching System
+        bridges the gap between job seekers and employers
+        through technology-driven recommendations.
+    </p>
+
+</section>
+
+{% endblock %}
